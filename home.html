@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Janala | Best Platform for Learning English</title>
+  <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind + DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" /> -->
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./style/style.css" />
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <div class="navbar bg-base-100 shadow-sm">
+    <div class="navbar-start">
+      <a class="flex items-center gap-1">
+        <span class="text-lg font-bold">English</span>
+        <img src="./assets/logo.png" alt="" />
+        <span class="font-bangla text-lg font-semibold">জানালা</span>
+      </a>
+    </div>
+    <div class="navbar-end">
+      <button id="logout-btn" class="btn btn-outline btn-primary">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="flex flex-col-reverse md:flex-row gap-10 justify-between items-center py-10 w-11/12 mx-auto">
+  <div class="flex-1 text-center md:text-left">
+    <h2 class="text-4xl font-bold mb-6">
+      <span class="text-sky-400">English</span> is Easy!!
+    </h2>
+    <p class="font-bangla">
+      আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন।
+    </p>
+  </div>
+     <!-- Right Image -->
+  <div class="flex-1 flex justify-center">
+    <div class="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-sky-300 shadow-2xl">
+      <img 
+        src="./assets/myProfilePic.png"
+        alt="Profile"
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- LESSON SECTION -->
+<section class="py-10">
+  <h2 class="text-4xl font-bold mb-8 text-center">
+    <span class="text-sky-400">Let's</span> Learn Vocabulary
+  </h2>
+  <div id="level-container" class="flex gap-5 flex-wrap justify-center"></div>
+</section>
+
+<!-- SEARCH -->
+<section class="flex justify-center">
+  <div class="join gap-2">
+    <input id="input-search" type="text" placeholder="Search Vocabulary" class="input join-item" />
+    <button id="btn-search" class="btn btn-primary join-item">Search</button>
+  </div>
+</section>
+
+<!-- SPINNER -->
+<section id="spinner" class="flex justify-center items-center py-10 hidden">
+  <span class="loading loading-bars loading-xl"></span>
+</section>
+
+<!-- WORD CONTAINER -->
+<section id="word-container" class="bg-gray-100 p-10 w-11/12 mx-auto my-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+  <div class="text-center col-span-full py-10 font-bangla">
+    <p class="text-xl text-gray-400">আপনি এখনো কোন Lesson Select করেন নি</p>
+    <h2 class="font-bold text-3xl">একটি Lesson Select করুন।</h2>
+  </div>
+</section>
+
+<!-- MODAL -->
+<dialog id="word_modal" class="modal">
+  <div class="modal-box">
+    <div id="details-container"></div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<!--  FOOTER  -->
+<footer>
+
+  <!-- Main Footer Body -->
+  <div class="bg-[#f0f8ff] pt-12 pb-8 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Footer Top: Logo + Nav columns -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+
+        <!-- Brand column -->
+        <div class="col-span-1">
+          <a class="flex items-center gap-1 mb-4">
+            <span class="text-xl font-bold text-gray-800">English</span>
+            <img src="./assets/logo.png" alt="logo" class="w-7 h-7" />
+            <span class="font-bangla text-xl font-semibold text-gray-800">জানালা</span>
+          </a>
+          <p class="font-bangla text-sm text-gray-500 leading-relaxed">
+            ইংরেজি শেখার সবচেয়ে সহজ ও মজার প্ল্যাটফর্ম। আজই শুরু করুন আপনার শেখার যাত্রা।
+          </p>
+          <!-- Social Icons -->
+          <div class="flex gap-3 mt-5">
+            <a href="#" class="w-9 h-9 rounded-full bg-sky-400 flex items-center justify-center text-white hover:bg-sky-500 transition-colors">
+              <i class="fa-brands fa-facebook-f text-sm"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-sky-400 flex items-center justify-center text-white hover:bg-sky-500 transition-colors">
+              <i class="fa-brands fa-youtube text-sm"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-sky-400 flex items-center justify-center text-white hover:bg-sky-500 transition-colors">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-sky-400 flex items-center justify-center text-white hover:bg-sky-500 transition-colors">
+              <i class="fa-brands fa-twitter text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-4 text-base">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-gray-500 hover:text-sky-500 transition-colors font-bangla">হোম</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-sky-500 transition-colors font-bangla">লেসন সমূহ</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-sky-500 transition-colors font-bangla">শব্দ শিখুন</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-sky-500 transition-colors font-bangla">কুইজ</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-sky-500 transition-colors font-bangla">লিডারবোর্ড</a></li>
+          </ul>
+        </div>
+
+        <!-- Learn -->
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-4 text-base">Learn</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-gray-500 hover:text-sky-500 transition-colors font-bangla">বেসিক ইংরেজি</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-sky-500 transition-colors font-bangla">গ্রামার</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-sky-500 transition-colors font-bangla">ভোকাবুলারি</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-sky-500 transition-colors font-bangla">উচ্চারণ</a></li>
+            <li><a href="#" class="text-sm text-gray-500 hover:text-sky-500 transition-colors font-bangla">Speaking Practice</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-4 text-base">Contact Us</h4>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-location-dot text-sky-400 mt-1 text-sm"></i>
+              <span class="text-sm text-gray-500 font-bangla">ঢাকা, বাংলাদেশ</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-sky-400 text-sm"></i>
+              <span class="text-sm text-gray-500">inayem98@gmail.com</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-sky-400 text-sm"></i>
+              <span class="text-sm text-gray-500">+880 1700-000000</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-sky-100"></div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bg-gray-800 py-4 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+
+      <!-- Logo -->
+      <a class="flex items-center gap-1">
+        <span class="text-sm font-bold text-white">English</span>
+        <img src="./assets/logo.png" alt="logo" class="w-5 h-5" />
+        <span class="font-bangla text-sm font-semibold text-white">জানালা</span>
+      </a>
+
+      <!-- Copyright -->
+      <p class="text-gray-400 text-xs font-bangla text-center">
+        © ২০২৫ English Janala. সর্বস্বত্ব সংরক্ষিত।
+      </p>
+
+
+      <!-- Bottom links -->
+      <div class="flex gap-4">
+        <a href="#" class="text-gray-400 text-xs hover:text-sky-400 transition-colors">Privacy Policy</a>
+        <a href="#" class="text-gray-400 text-xs hover:text-sky-400 transition-colors">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="./scripts/home.js"></script>
+</body>
+</html>
+
