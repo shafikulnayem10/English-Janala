@@ -15,12 +15,19 @@ document.getElementById("logout-btn")
   });
 
 
+
 // Helper Functions
 const manageSpinner = (status) => {
-  document.getElementById("spinner")
-    .classList.toggle("hidden", !status);
-  document.getElementById("word-container")
-    .classList.toggle("hidden", status);
+  const spinner = document.getElementById("spinner");
+  const wordContainer = document.getElementById("word-container");
+
+  if (status === true) {
+    spinner.classList.remove("hidden");
+    wordContainer.classList.add("hidden");
+  } else {
+    spinner.classList.add("hidden");
+    wordContainer.classList.remove("hidden");
+  }
 };
 
 const removeActive = () => {
