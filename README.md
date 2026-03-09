@@ -8,7 +8,7 @@ It helps users learn vocabulary easily through lessons, search functionality, an
 ## 🚀 Live Site
 
 🔗 **Live Link:**  
-https://shafikulnayem10.github.io/English-Janala/
+https://my-english-janala-web-app.netlify.app/
 
 ---
 
